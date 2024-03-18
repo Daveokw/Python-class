@@ -199,3 +199,129 @@ class Grandchild(Child):
 # Script: any file with .py
 # Module: Any python script that has more than one class in it
 # Library: Has different modules in it
+        
+# ERROR HANDLING
+# Run-time error
+# Compile-time error
+# try, except, else, finally (block codes)
+
+# container = ['pen', 'pencil', 'phone', 'drink']
+# print(container[5])
+
+# user = int(input())
+
+# try: 
+#     container
+# except:
+#     print('Invalid entry')
+# else:
+#     print('Valid entry')
+# finally:
+#     print('I will always show up if there is an error or not')
+
+# You can be specific with the type of error being handled
+
+# try:
+#     container[5]
+# except NameError:
+#     print('Invalid entry')
+# except IndexError:
+#     print('Index out of range')
+# except:
+#     print('There is something wrong somewhere')
+
+# try:
+#     val1 = int(input('Input Value 1: '))
+#     val2 = int(input('Input Value 2: '))
+
+# except ValueError as v: 
+#     print(v)
+#     # raise TypeError ('The value must be an integer')
+#     # print('The value must be an integer')
+# except Exception as e:
+#     print(e)
+
+class Calc:
+    def __init__(self):
+        self.home()
+    def home(self):
+        try:
+            self.val1 = int(input('Input Value 1: '))
+            self.val2 = int(input('Input Value 2: '))
+        except Exception as e:
+            print(e)
+            self.home()
+
+        user = input('''
+        Choose option:
+        1. Addition
+        2. Division
+                      
+        Option: ''')
+        if user == '1':
+            self.add()
+        elif user == '2':
+            self.div()
+        else:
+            print('Invalid input')
+            self.home()
+    def add(self):
+        res = self.val1 + self.val2
+        print('Your result is ', res)
+    def div(self):
+        try:
+            res = self.val1 / self.val2
+        except Exception as e:
+            print(e)
+        else:
+            print('Your result is ', res)
+        finally:
+            self.home()
+# calculator = Calc()
+            
+
+# File-handling
+'''
+r - read only
+w - write
+a - append
+x - create
+'''
+            
+# myfile = open(r'C:\Users\okanl\OneDrive\Documents\Python\myfile.txt')
+# print(myfile.read())
+# print(myfile.readlines())
+# x = 0
+# for line in myfile.readlines():
+#     print(line)
+#     if x == 5:
+#         break
+#     x += 1
+# myfile.close()
+# with open(r'C:\Users\okanl\OneDrive\Documents\Python\myfile.txt', mode = 'r', encoding = ) as file:
+#     print(file.read())
+# file.read()
+# myfile = open(r'C:\Users\okanl\OneDrive\Documents\Python\myfile2.txt', mode = 'x')
+
+# with open(r'C:\Users\okanl\OneDrive\Documents\Python\myfile2.txt', mode = 'wt') as myfile:
+#     myfile.write('Hello...')
+# with open(r'C:\Users\okanl\OneDrive\Documents\Python\myfile2.txt', mode = 'a') as myfile:
+#     myfile.write('Hello world...\n')
+
+
+
+
+import os
+# os.mkdir(r'C:\Users\okanl\OneDrive\Documents\Python\New folder')
+# os.rmdir(r'C:\Users\okanl\OneDrive\Documents\Python\New folder')
+# os.remove(r'C:\Users\okanl\OneDrive\Documents\Python\myfile2.txt')
+# print(os.path.exists(r'C:\Users\okanl\OneDrive\Documents\Python\myfile.txt'))
+
+# if os.path.exists(r'C:\Users\okanl\OneDrive\Documents\Python\myfile3.txt'):
+#     print('File exists')
+#     print('_'*98)
+# else:
+#     print('File does not exist')
+#     with open(r'C:\Users\okanl\OneDrive\Documents\Python\myfile3.txt') as myfile:
+#         print(myfile.read())
+
