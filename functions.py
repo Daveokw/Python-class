@@ -308,8 +308,7 @@ x - create
 # with open(r'C:\Users\okanl\OneDrive\Documents\Python\myfile2.txt', mode = 'a') as myfile:
 #     myfile.write('Hello world...\n')
 
-
-
+# myfile.close()
 
 import os
 # os.mkdir(r'C:\Users\okanl\OneDrive\Documents\Python\New folder')
@@ -317,11 +316,123 @@ import os
 # os.remove(r'C:\Users\okanl\OneDrive\Documents\Python\myfile2.txt')
 # print(os.path.exists(r'C:\Users\okanl\OneDrive\Documents\Python\myfile.txt'))
 
-# if os.path.exists(r'C:\Users\okanl\OneDrive\Documents\Python\myfile3.txt'):
-#     print('File exists')
-#     print('_'*98)
-# else:
-#     print('File does not exist')
-#     with open(r'C:\Users\okanl\OneDrive\Documents\Python\myfile3.txt') as myfile:
-#         print(myfile.read())
+# Creating a directory with os module
+# os.mkdir(r'C:\Users\okanl\OneDrive\Documents\Python\newDIR')
+# file = open(r'C:\Users\okanl\OneDrive\Documents\Python\text1.txt')
+# file = open(r'C:\Users\okanl\OneDrive\Documents\Python\text2.txt')
+# print('Folder and files created successfully')
 
+# os.rmdir(r'C:\Users\okanl\OneDrive\Documents\Python\text3.txt')
+# Deleting a directory
+
+# for root, folder, file in os.walk(r'C:\Users\okanl\OneDrive\Documents\Python\newDIR'):
+#     print( root, folder, file)
+
+# if os.path.exists(r'C:\Users\okanl\OneDrive\Documents\Python\text3.txt'):
+#     print('File exist')
+#     print('-'*98)
+#     with open(r'C:\Users\okanl\OneDrive\Documents\Python\text3.txt', mode="rt") as myFile:
+#         print(myFile.read())
+# else:
+#     print("file does not exists")
+#     print('_'*98)
+#     with open(r'C:\Users\okanl\OneDrive\Documents\Python\text3.txt', "xt") as myFile:
+#         print("file created successfully")
+
+# if os.path.exists(r'C:\Users\okanl\OneDrive\Documents\Python\text3.txt'):
+#     os.remove(r'C:\Users\okanl\OneDrive\Documents\Python\text3.txt')
+#     print("file deleted ")
+# else:
+#     print("file not available")
+
+import time
+# user = input('Path to the folder: ')
+# try:
+#     os.rmdir(user)
+# except OSError:
+#     print('The folder is not empty')
+#     for root, folder, files in os.walk(user):
+#         print(files)
+
+#         for file in (files):
+#             print('Deleting', file)
+#             time.sleep(2)
+#             os.remove(root+'\\'+file)
+
+#     print('Deleting Directory')
+#     time.sleep(1)
+#     os.rmdir(user)
+
+# file = open(r'C:\Users\okanl\OneDrive\Documents\Python\president_height.csv', mode = 'rt')
+# # print(file.read())
+# file_list = file.readlines()
+# file_list.pop(0)
+# # print(file_list)
+# names = []
+# heights = []
+# for line in file_list: 
+#     # print(line)
+#     val = line.split(',')
+#     # print(val)
+
+#     height = int(val[2].strip('\n'))
+#     # print(height)
+#     heights.append(height)
+#     names.append(val[1])
+
+# # print(heights)
+# # print(names)
+# max_height = max(heights)
+# # print(max_height)
+# index_max_height = heights.index(max_height)
+# print(index_max_height)
+# print(names[index_max_height])
+
+file = open(r'C:\Users\okanl\OneDrive\Documents\Python\student_grades.csv', mode='rt')
+# print(file.read())
+file_list = file.readlines()
+file_list.pop(0)
+# print(file_list)
+names= []
+scores = []
+grades = []
+A = []
+B = []
+C = []
+for line in file_list:
+    # print(line)
+    val = (line.split(','))
+    # print(val)
+    name = val[0].strip(' ')
+    score = val[1].strip(' ')
+    grade = val[2].strip('\n')
+    # print(names, score, grades)
+
+    names.append(name)
+    scores.append(int(score))
+    grades.append(grade)
+
+    print(names)
+    print(grades)
+    print(scores)
+
+    for score in scores:
+        if score >= 70:
+            index_scoreA = scores.index(score)
+            print(names(index_scoreA))
+
+    # for grade in grades:
+    #     if grade == 'A':
+    #         index_gradeA = grades.index(grade)
+            # A.append((names[index_gradeA], grade[index_gradeA], score[index_gradeA]))
+            # print(names(index_gradeA))
+        # elif grade == 'B':
+        #     index_gradeB = grades.index(grade)
+        #     B.append((names[index_gradeB], grade[index_gradeB], score[index_gradeB]))
+        #     print(B)
+        # elif grade == 'C':
+        #     index_gradeC = grades.index(grade)
+        #     C.append((names[index_gradeC], grade[index_gradeC], score[index_gradeC]))
+        #     print(C)
+        # else:
+        #     break
