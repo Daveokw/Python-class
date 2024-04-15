@@ -363,63 +363,63 @@ import time
 #     time.sleep(1)
 #     os.rmdir(user)
 
-# file = open(r'C:\Users\okanl\OneDrive\Documents\Python\president_height.csv', mode = 'rt')
-# # print(file.read())
-# file_list = file.readlines()
-# file_list.pop(0)
-# # print(file_list)
+file = open(r'C:\Users\okanl\OneDrive\Documents\Python\president_height.csv', mode = 'rt')
+# print(file.read())
+file_list = file.readlines()
+file_list.pop(0)
+print(file_list)
 # names = []
 # heights = []
 # for line in file_list: 
-#     # print(line)
+#     print(line)
 #     val = line.split(',')
-#     # print(val)
+#     print(val)
 
 #     height = int(val[2].strip('\n'))
-#     # print(height)
+#     print(height)
 #     heights.append(height)
 #     names.append(val[1])
 
-# # print(heights)
-# # print(names)
+# print(heights)
+# print(names)
 # max_height = max(heights)
-# # print(max_height)
+# print(max_height)
 # index_max_height = heights.index(max_height)
 # print(index_max_height)
 # print(names[index_max_height])
 
-file = open(r'C:\Users\okanl\OneDrive\Documents\Python\student_grades.csv', mode='rt')
-# print(file.read())
-file_list = file.readlines()
-file_list.pop(0)
-# print(file_list)
-names= []
-scores = []
-grades = []
-A = []
-B = []
-C = []
-for line in file_list:
-    # print(line)
-    val = (line.split(','))
-    # print(val)
-    name = val[0].strip(' ')
-    score = val[1].strip(' ')
-    grade = val[2].strip('\n')
-    # print(names, score, grades)
+# # file = open(r'C:\Users\okanl\OneDrive\Documents\Python\student_grades.csv', mode='rt')
+# # print(file.read())
+# file_list = file.readlines()
+# file_list.pop(0)
+# # print(file_list)
+# names= []
+# scores = []
+# grades = []
+# A = []
+# B = []
+# C = []
+# for line in file_list:
+#     # print(line)
+#     val = (line.split(','))
+#     # print(val)
+#     name = val[0].strip(' ')
+#     score = val[1].strip(' ')
+#     grade = val[2].strip('\n')
+#     # print(names, score, grades)
 
-    names.append(name)
-    scores.append(int(score))
-    grades.append(grade)
+#     names.append(name)
+#     scores.append(int(score))
+#     grades.append(grade)
 
-    print(names)
-    print(grades)
-    print(scores)
+#     print(names)
+#     print(grades)
+#     print(scores)
 
-    for score in scores:
-        if score >= 70:
-            index_scoreA = scores.index(score)
-            print(names(index_scoreA))
+#     for score in scores:
+#         if score >= 70:
+#             index_scoreA = scores.index(score)
+#             print(names(index_scoreA))
 
     # for grade in grades:
     #     if grade == 'A':

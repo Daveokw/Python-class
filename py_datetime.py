@@ -76,39 +76,50 @@ import datetime as dt
 
 import time
 import pygame
+# from playsound import playsound
 file = (r'C:\Users\okanl\OneDrive\Documents\Python\Kizz-Daniel-My-G-(JustNaija.com).mp3')
 
 # pygame.init()
 # pygame.mixer.music.load(file)
 # pygame.mixer.music.play()
 # time.sleep(10)
-# pygame.mixer.music.stop
+# # pygame.mixer.music.stop
 
-
-
+alarmHour = int(input('Enter time as hour(1-12): '))
+alarmMin = int(input('Enter time as minute(0-59): '))
+alarmAm = input('Enter AM/PM: ').strip().capitalize()
+if alarmAm == 'pm':
+    alarmHour += 12
 while True:
-    tm = dt.datetime.now()
-    # remind = tm.strftime(input('Enter time as hour(1-12), minute(0-59), seconds(0-59), AM/PM: '))
-    hour = input('Enter time as hour(1-12): ')
-    minute = input('Enter time as minute(0-59): ')
-    second = input('Enter time as seconds(0-59): ')
-    format = input('Enter AM/PM: ')
-    if hour == dt.datetime.now() and minute == dt.datetime.now() and second == dt.datetime.now() and format == dt.datetime.now():
-        print('time')
-        # print("Its time to play.")
-        # pygame.init()
-        # pygame.mixer.music.load(file)
+    if alarmHour == dt.datetime.now().hour and alarmMin == dt.datetime.now().minute:
+        print("Its time to play.")
+        pygame.init()
+        pygame.mixer.music.load(file)
+        pygame.mixer.music.play()
+        time.sleep(10)
+        break
 
-        # pygame.mixer.music.play()
-
-        # time.sleep(10)
-        # break
-
-    # Stop the music
+# while True:
+#             tm = dt.datetime.now()
+#             # remind = tm.strftime(input('Enter time as hour(1-12), minute(0-59), seconds(0-59), AM/PM: '))
+#             hour = input('Enter time as hour(1-12): ')
+#             minute = input('Enter time as minute(0-59): ')
+#             format = input('Enter AM/PM: ').strip().capitalize()
+#             if format == 'PM':
+#                 hour += 12
+#             if hour == dt.datetime.now() and minute == dt.datetime.now():
+#                 print("Its time to play.")
+#                 pygame.init()
+#                 pygame.mixer.music.load(file)
+#                 pygame.mixer.music.play()
+#                 time.sleep(10)
+#                 break
+        # Stop the music
         # pygame.mixer.music.stop()
 
-    # Quit pygame
+        # Quit pygame
         # pygame.quit()
+
 
     # if tm.strftime("%I") == remind and tm.strftime("%M") == "44" and tm.strftime("%S") == "00" and tm.strftime("%p") == "AM":
     # print("Its time to play.")
